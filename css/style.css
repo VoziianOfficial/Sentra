@@ -406,20 +406,23 @@ h4 {
     letter-spacing: 0.12em;
 }
 
-/* ==========================================================
-   DECORATIVE SECURITY SYSTEM
-   ========================================================== */
+
 
 .body-target,
 .security-radar,
 .security-crosshair,
 .scanner-grid,
 .scan-line,
-.technical-line,
-.corner-brackets {
+.technical-line {
     position: absolute;
     z-index: 0;
     pointer-events: none;
+}
+
+.corner-brackets {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
 }
 
 .body-target,
@@ -2095,7 +2098,7 @@ h4 {
 
 @media (max-width: 1180px) {
     .section-nav {
-        top: 0;
+        top: var(--header-height);
     }
 }
 
@@ -2128,4 +2131,45 @@ h4 {
 .services-nav-control .dropdown-toggle__chevron {
     width: 13px;
     height: 13px;
+}
+
+/* ==========================================================
+   GLOBAL OVERLAP SAFETY FIX
+   ========================================================== */
+
+.contact-info-panel,
+.service-area-map__content,
+.platform-model__panel,
+.about-hero__notice,
+.services-hero__panel,
+.service-hero__panel {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    width: auto;
+    min-width: 0;
+    height: auto;
+    pointer-events: auto;
+}
+
+.contact-info-panel.corner-brackets,
+.service-area-map__content.corner-brackets,
+.platform-model__panel.corner-brackets,
+.about-hero__notice.corner-brackets,
+.services-hero__panel.corner-brackets,
+.service-hero__panel.corner-brackets {
+    position: relative;
+}
+
+.contact-form-layout,
+.service-area-map__layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    min-width: 0;
+}
+
+.contact-form-layout>*,
+.service-area-map__layout>* {
+    min-width: 0;
 }

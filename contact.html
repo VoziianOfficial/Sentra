@@ -222,96 +222,144 @@
                 </div>
             </section>
 
-            <!-- =====================================================
-           03 / QUICK CONTACT ROW
+        <!-- =====================================================
+           03 / USER PROOF STRIP
            ===================================================== -->
-            <section class="quick-contact section--compact" id="quick-contact" aria-labelledby="quickContactTitle">
-                <div class="container-wide">
-                    <div class="quick-contact__top">
-                        <span class="section-kicker">Quick Contact</span>
-
-                        <h2 id="quickContactTitle" class="upper-title">
-                            Fast contact paths
+        <section class="contact-proof section--compact" id="quick-contact" aria-labelledby="contactProofTitle">
+            <span class="technical-line contact-proof__line" aria-hidden="true"></span>
+            <div class="body-target contact-proof__target" aria-hidden="true"></div>
+        
+            <div class="container-wide">
+                <div class="contact-proof__layout">
+                    <div class="contact-proof__heading">
+                        <span class="section-kicker">User Feedback</span>
+        
+                        <h2 id="contactProofTitle" class="upper-title">
+                            What people value<br>
+                            before choosing a <span class="text-accent">provider.</span>
                         </h2>
+        
+                        <p>
+                            Security requests often start with the same priorities: clarity, provider comparison,
+                            local availability, and knowing what details to verify before moving forward.
+                        </p>
                     </div>
-
-                    <div class="quick-contact__row" aria-label="Quick contact methods">
-                        <a class="quick-contact__item" href="tel:+18775550186" data-phone-link>
-                            <span class="quick-contact__icon" aria-hidden="true">☎</span>
-                            <small>Call</small>
-                            <strong data-phone-text>(877) 555-0186</strong>
-                        </a>
-
-                        <a class="quick-contact__item" href="mailto:hello@sentramatch.com" data-email-link>
-                            <span class="quick-contact__icon" aria-hidden="true">✉</span>
-                            <small>Email</small>
-                            <strong data-email-text>hello@sentramatch.com</strong>
-                        </a>
-
-                        <div class="quick-contact__item">
-                            <span class="quick-contact__icon" aria-hidden="true">⌖</span>
-                            <small>Service Area</small>
-                            <strong data-service-area>United States</strong>
-                        </div>
-
-                        <div class="quick-contact__item">
-                            <span class="quick-contact__icon" aria-hidden="true">◷</span>
-                            <small>Request Hours</small>
-                            <strong>Online 24/7</strong>
-                        </div>
+        
+                    <div class="contact-proof__rail" aria-label="Common user priorities">
+                        <span>Quote clarity</span>
+                        <span>Provider options</span>
+                        <span>Service category fit</span>
+                        <span>Local availability</span>
                     </div>
-                </div>
-            </section>
-
-            <!-- =====================================================
-           04 / MODERN MAP / SERVICE AREA
-           ===================================================== -->
-            <section class="service-area-map section section--dark" id="service-area"
-                aria-labelledby="serviceAreaTitle">
-                <div class="scanner-grid" aria-hidden="true"></div>
-                <span class="target-dot target-dot--yellow service-area-map__dot" aria-hidden="true"></span>
-
-                <div class="container-wide">
-                    <div class="service-area-map__layout">
-                        <div class="security-map" aria-label="Stylized service area map">
-                            <div class="security-map__grid" aria-hidden="true"></div>
-                            <div class="security-map__route" aria-hidden="true"></div>
-                            <span class="security-map__pin" aria-hidden="true"></span>
-                            <span class="security-map__ring security-map__ring--one" aria-hidden="true"></span>
-                            <span class="security-map__ring security-map__ring--two" aria-hidden="true"></span>
-                            <span class="security-map__node security-map__node--one" aria-hidden="true"></span>
-                            <span class="security-map__node security-map__node--two" aria-hidden="true"></span>
-                            <span class="security-map__node security-map__node--three" aria-hidden="true"></span>
-
-                            <div class="security-map__label">
-                                <span class="hud-label hud-label--active">Coverage Signal</span>
-                                <strong data-service-area>United States</strong>
+        
+                    <div class="contact-proof__grid">
+                        <article class="contact-proof__item">
+                            <span class="contact-proof__number">01</span>
+        
+                            <blockquote>
+                                “I wanted to compare CCTV and alarm provider options without calling random companies one by
+                                one.”
+                            </blockquote>
+        
+                            <div class="contact-proof__meta">
+                                <strong>Home security request</strong>
+                                <small>CCTV Systems / Alarm Systems</small>
                             </div>
-                        </div>
-
-                        <article class="service-area-map__content corner-brackets">
-                            <span class="section-kicker">Service Area</span>
-
-                            <h2 id="serviceAreaTitle" class="upper-title">
-                                Local provider options<br>
-                                may vary by <span class="text-accent">area.</span>
-                            </h2>
-
-                            <p>
-                                Sentra uses your ZIP code and selected service category to help route the
-                                request toward relevant independent provider options where available.
-                            </p>
-
-                            <div class="service-area-map__address">
-                                <span>Configured address</span>
-                                <strong data-address-text>1428 Congress Ave, Suite 210, Austin, TX 78701, USA</strong>
+                        </article>
+        
+                        <article class="contact-proof__item contact-proof__item--accent">
+                            <span class="contact-proof__number">02</span>
+        
+                            <blockquote>
+                                “The platform made it easier to understand which service category matched the property need.”
+                            </blockquote>
+        
+                            <div class="contact-proof__meta">
+                                <strong>Business property request</strong>
+                                <small>Access Control / Monitoring</small>
                             </div>
-
-                            <a class="btn btn--primary" href="#contact-form">Request Options</a>
+                        </article>
+        
+                        <article class="contact-proof__item">
+                            <span class="contact-proof__number">03</span>
+        
+                            <blockquote>
+                                “Before choosing a provider, I knew what to verify: quotes, credentials, timelines, and service
+                                details.”
+                            </blockquote>
+        
+                            <div class="contact-proof__meta">
+                                <strong>Provider comparison request</strong>
+                                <small>Independent provider options</small>
+                            </div>
                         </article>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
+    <!-- =====================================================
+       04 / SERVICE AREA PHOTO SPLIT
+       ===================================================== -->
+    <section class="service-area-map service-area-photo-split section section--dark" id="service-area"
+        aria-labelledby="serviceAreaTitle">
+        <div class="scanner-grid" aria-hidden="true"></div>
+        <span class="target-dot target-dot--yellow service-area-map__dot" aria-hidden="true"></span>
+    
+        <div class="container-wide">
+            <div class="coverage-split">
+                <article class="coverage-split__content">
+                    <span class="section-kicker">Service Area</span>
+    
+                    <h2 id="serviceAreaTitle" class="upper-title">
+                        Provider options<br>
+                        depend on your <span class="text-accent">area.</span>
+                    </h2>
+    
+                    <p>
+                        Sentra uses your ZIP code and selected security category to help organize your request
+                        and route it toward independent provider options where available.
+                    </p>
+    
+                    <div class="coverage-split__address">
+                        <span>Configured address</span>
+                        <strong data-address-text>1428 Congress Ave, Suite 210, Austin, TX 78701, USA</strong>
+                    </div>
+    
+                    <div class="coverage-split__actions">
+                        <a class="btn btn--primary" href="#contact-form">Request Options</a>
+                        <a class="text-link" href="services.html">View services</a>
+                    </div>
+                </article>
+    
+                <figure class="coverage-split__media">
+                    <img src="./assets/images/hero-contact-monitoring-wall.jpg" alt="Modern security monitoring workspace">
+    
+                    <figcaption class="coverage-split__label">
+                        <span class="hud-label hud-label--active">Coverage Check</span>
+                        <strong data-service-area>United States</strong>
+                    </figcaption>
+                </figure>
+            </div>
+    
+            <div class="coverage-rail" aria-label="Service area notes">
+                <span>
+                    <strong>01</strong>
+                    ZIP code based routing
+                </span>
+    
+                <span>
+                    <strong>02</strong>
+                    Independent provider options
+                </span>
+    
+                <span>
+                    <strong>03</strong>
+                    Availability varies by location
+                </span>
+            </div>
+        </div>
+    </section>
 
             <!-- =====================================================
            05 / FAQ + FINAL CTA
