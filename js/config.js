@@ -84,7 +84,7 @@ window.SITE_CONFIG = {
             shortTitle: "CCTV",
             href: "cctv-systems.html",
             icon: "camera",
-            image: "./assets/images/service-cctv.jpg",
+            image: "./assets/images/services-card.jpg",
             heroImage: "./assets/images/cctv-hero.jpg",
             status: "Camera Coverage",
             summary:
