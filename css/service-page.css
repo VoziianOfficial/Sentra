@@ -1138,3 +1138,50 @@
 .section--light p.text-white-only {
     color: rgba(255, 255, 255, 0.82);
 }
+
+.service-quote-light__photo {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(25, 26, 27, 0.14), rgba(25, 26, 27, 0.78)),
+        linear-gradient(90deg, rgba(25, 26, 27, 0.55), rgba(25, 26, 27, 0.12)),
+        url("../assets/images/service-cta-bg.jpg") center / cover no-repeat;
+    border: 1px solid var(--color-border-dark);
+    border-radius: 26px 8px 26px 8px;
+    box-shadow: 0 18px 46px rgba(25, 26, 27, 0.12);
+}
+
+.service-quote-light__photo img {
+    display: none;
+}
+
+.service-quote-light__photo-content {
+    display: grid;
+    align-content: end;
+    gap: 8px;
+    min-height: 100%;
+    padding: clamp(18px, 2.4vw, 26px);
+}
+
+.service-quote-light__photo-content span {
+    width: max-content;
+    padding: 7px 9px;
+    color: var(--color-accent);
+    font-size: 0.66rem;
+    font-weight: 850;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    background: rgba(245, 197, 66, 0.14);
+    border: 1px solid rgba(245, 197, 66, 0.3);
+}
+
+.service-quote-light__photo-content strong {
+    max-width: 310px;
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}

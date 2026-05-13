@@ -1422,3 +1422,22 @@ a.contact-info-panel__row:hover {
         inset: 14px;
     }
 }
+
+/* ==========================================================
+   CONTACT HERO IMAGE BRIGHTNESS FIX
+   ========================================================== */
+
+.contact-hero__bg img {
+    filter: grayscale(0.08) contrast(1.06) brightness(0.92) saturate(1.08);
+}
+
+.contact-hero__overlay {
+    background:
+        linear-gradient(90deg,
+            rgba(31, 33, 35, 0.76),
+            rgba(31, 33, 35, 0.42) 48%,
+            rgba(31, 33, 35, 0.68)),
+        linear-gradient(180deg,
+            rgba(31, 33, 35, 0.08),
+            rgba(31, 33, 35, 0.68));
+}
