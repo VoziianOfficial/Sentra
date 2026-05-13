@@ -1,14 +1,5 @@
 "use strict";
 
-/* ==========================================================
-   Sentra — Home Page Script
-   Handles:
-   - subtle hero parallax
-   - status label motion
-   - section reveal states
-   - image fallback classes
-   ========================================================== */
-
 (function () {
     document.addEventListener("DOMContentLoaded", initHomePage);
 
@@ -18,10 +9,6 @@
         initSectionReveal();
         initImageFallbacks();
     }
-
-    /* ==========================================================
-       HERO PARALLAX
-       ========================================================== */
 
     function initHeroParallax() {
         const hero = document.querySelector(".home-hero");
@@ -76,10 +63,6 @@
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
 
-    /* ==========================================================
-       STATUS LABEL MOTION
-       ========================================================== */
-
     function initStatusLabelMotion() {
         const labels = document.querySelectorAll(".home-hero__status");
 
@@ -112,10 +95,6 @@
 
         document.head.appendChild(style);
     }
-
-    /* ==========================================================
-       SECTION REVEAL
-       ========================================================== */
 
     function initSectionReveal() {
         const sections = document.querySelectorAll(
@@ -181,10 +160,6 @@
         document.head.appendChild(style);
     }
 
-    /* ==========================================================
-       IMAGE FALLBACKS
-       ========================================================== */
-
     function initImageFallbacks() {
         const images = document.querySelectorAll(".home-page img");
 
@@ -209,10 +184,6 @@
 
         image.style.display = "none";
     }
-
-    /* ==========================================================
-       HELPERS
-       ========================================================== */
 
     function prefersReducedMotion() {
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;

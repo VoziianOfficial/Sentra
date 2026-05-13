@@ -37,6 +37,16 @@ window.SITE_CONFIG = {
 
     legalNotice:
         "Sentra is an independent provider matching platform. We do not install, repair, monitor, or perform security services directly. Provider availability, pricing, licensing, insurance, timelines, and service details vary by provider and location. Users should verify all provider credentials and project details before hiring.",
+    
+    legacyContent: {
+        companyNames: ["Sentra"],
+        companyIds: ["Sentra Provider Matching LLC"],
+        phones: ["(877) 555-0186"],
+        phoneHrefs: ["tel:+18775550186"],
+        emails: ["hello@sentramatch.com"],
+        emailHrefs: ["mailto:hello@sentramatch.com"],
+        addresses: ["1428 Congress Ave, Suite 210, Austin, TX 78701, USA"]
+    },
 
     navigation: [
         {

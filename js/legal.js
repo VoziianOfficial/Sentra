@@ -1,13 +1,5 @@
 "use strict";
 
-/* ==========================================================
-   Sentra — Legal Pages Script
-   Handles:
-   - subtle legal hero motion
-   - section reveal
-   - active legal links
-   ========================================================== */
-
 (function () {
     document.addEventListener("DOMContentLoaded", initLegalPage);
 
@@ -16,10 +8,6 @@
         initLegalReveal();
         initActiveLegalLinks();
     }
-
-    /* ==========================================================
-       HERO MOTION
-       ========================================================== */
 
     function initLegalHeroMotion() {
         const hero = document.querySelector(".legal-hero");
@@ -60,10 +48,6 @@
         update();
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
-
-    /* ==========================================================
-       SECTION REVEAL
-       ========================================================== */
 
     function initLegalReveal() {
         const sections = document.querySelectorAll(
@@ -129,10 +113,6 @@
         document.head.appendChild(style);
     }
 
-    /* ==========================================================
-       ACTIVE LEGAL LINKS
-       ========================================================== */
-
     function initActiveLegalLinks() {
         const currentPage = getCurrentPage();
 
@@ -157,10 +137,6 @@
                 }
             });
     }
-
-    /* ==========================================================
-       HELPERS
-       ========================================================== */
 
     function getCurrentPage() {
         const path = window.location.pathname;

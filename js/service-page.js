@@ -1,15 +1,5 @@
 "use strict";
 
-/* ==========================================================
-   Sentra — Service Detail Page Script
-   Handles:
-   - subtle service hero motion
-   - overview media motion
-   - quote CTA radar motion
-   - section reveal
-   - image fallback classes
-   ========================================================== */
-
 (function () {
     document.addEventListener("DOMContentLoaded", initServicePage);
 
@@ -20,10 +10,6 @@
         initSectionReveal();
         initImageFallbacks();
     }
-
-    /* ==========================================================
-       HERO MOTION
-       ========================================================== */
 
     function initServiceHeroMotion() {
         const hero = document.querySelector(".service-hero");
@@ -71,10 +57,6 @@
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
 
-    /* ==========================================================
-       OVERVIEW MOTION
-       ========================================================== */
-
     function initOverviewMotion() {
         const section = document.querySelector(".service-overview");
 
@@ -112,10 +94,6 @@
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
 
-    /* ==========================================================
-       QUOTE CTA MOTION
-       ========================================================== */
-
     function initQuoteMotion() {
         const quote = document.querySelector(".service-quote");
 
@@ -147,10 +125,6 @@
         update();
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
-
-    /* ==========================================================
-       SECTION REVEAL
-       ========================================================== */
 
     function initSectionReveal() {
         const sections = document.querySelectorAll(
@@ -216,10 +190,6 @@
         document.head.appendChild(style);
     }
 
-    /* ==========================================================
-       IMAGE FALLBACKS
-       ========================================================== */
-
     function initImageFallbacks() {
         const images = document.querySelectorAll(".service-detail-page img");
 
@@ -246,10 +216,6 @@
 
         image.style.display = "none";
     }
-
-    /* ==========================================================
-       HELPERS
-       ========================================================== */
 
     function prefersReducedMotion() {
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;

@@ -1,14 +1,5 @@
 "use strict";
 
-/* ==========================================================
-   Sentra — Contact Page Script
-   Handles:
-   - subtle contact hero motion
-   - custom map motion
-   - section reveal
-   - image fallback classes
-   ========================================================== */
-
 (function () {
     document.addEventListener("DOMContentLoaded", initContactPage);
 
@@ -18,10 +9,6 @@
         initSectionReveal();
         initImageFallbacks();
     }
-
-    /* ==========================================================
-       HERO MOTION
-       ========================================================== */
 
     function initContactHeroMotion() {
         const hero = document.querySelector(".contact-hero");
@@ -68,10 +55,6 @@
         update();
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
-
-    /* ==========================================================
-       MAP MOTION
-       ========================================================== */
 
     function initMapMotion() {
         const map = document.querySelector(".security-map");
@@ -162,10 +145,6 @@
         document.head.appendChild(style);
     }
 
-    /* ==========================================================
-       SECTION REVEAL
-       ========================================================== */
-
     function initSectionReveal() {
         const sections = document.querySelectorAll(
             ".contact-form-section, .quick-contact, .service-area-map, .contact-faq"
@@ -230,10 +209,6 @@
         document.head.appendChild(style);
     }
 
-    /* ==========================================================
-       IMAGE FALLBACKS
-       ========================================================== */
-
     function initImageFallbacks() {
         const images = document.querySelectorAll(".contact-page img");
 
@@ -258,10 +233,6 @@
 
         image.style.display = "none";
     }
-
-    /* ==========================================================
-       HELPERS
-       ========================================================== */
 
     function prefersReducedMotion() {
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;

@@ -1,7 +1,3 @@
-/* ==========================================================
-   ABOUT PAGE / HERO
-   ========================================================== */
-
 .about-hero {
     position: relative;
     min-height: clamp(560px, 72vh, 720px);
@@ -129,10 +125,6 @@
     color: var(--color-muted);
     font-size: 0.96rem;
 }
-
-/* ==========================================================
-   PLATFORM MODEL
-   ========================================================== */
 
 .platform-model {
     position: relative;
@@ -289,10 +281,6 @@
     border-radius: 50%;
 }
 
-/* ==========================================================
-   PLATFORM HELP
-   ========================================================== */
-
 .platform-help {
     position: relative;
     overflow: clip;
@@ -406,10 +394,6 @@
     line-height: 1.46;
 }
 
-/* ==========================================================
-   TRUST STRIP
-   ========================================================== */
-
 .trust-strip {
     position: relative;
     overflow: clip;
@@ -506,10 +490,6 @@
     line-height: 1.48;
 }
 
-/* ==========================================================
-   ABOUT CTA
-   ========================================================== */
-
 .about-cta {
     position: relative;
     overflow: clip;
@@ -604,20 +584,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ==========================================================
-   IMAGE FALLBACKS
-   ========================================================== */
-
 .about-hero__bg.is-image-missing,
 .platform-model__media.is-image-missing {
     background:
         radial-gradient(circle at 70% 30%, rgba(245, 197, 66, 0.14), transparent 28%),
         linear-gradient(135deg, #3a3d40, #1f2123);
 }
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
 
 @media (max-width: 1180px) {
     .about-hero__inner {
@@ -774,10 +746,6 @@
         grid-template-columns: 1fr;
     }
 }
-/* ==========================================================
-   ABOUT CTA / COMPACT LINE / NO FORM
-   ========================================================== */
-
 .about-cta--compact-line {
     position: relative;
     overflow: hidden;
@@ -919,8 +887,6 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Responsive */
-
 @media (max-width: 1180px) {
     .about-cta-line {
         grid-template-columns: 1fr;
@@ -965,10 +931,6 @@
         display: grid;
     }
 }
-
-/* ==========================================================
-   PLATFORM HELP / NUMBER SWIPE HOVERS
-   ========================================================== */
 
 .platform-help__number {
     position: relative;
@@ -1033,10 +995,6 @@
     opacity: 1;
     transform: scale(1);
 }
-
-/* ==========================================================
-   PLATFORM MODEL / PHOTO CARD + TEXT CARD
-   ========================================================== */
 
 .platform-model--cards {
     position: relative;
@@ -1249,8 +1207,6 @@
     border-bottom: 1px solid;
 }
 
-/* responsive */
-
 @media (max-width: 1180px) {
     .platform-model--cards .platform-model__layout {
         grid-template-columns: 1fr;
@@ -1298,10 +1254,6 @@
         grid-template-columns: 1fr;
     }
 }
-
-/* ==========================================================
-   ABOUT LENS / COMPARISON SECTION
-   ========================================================== */
 
 .about-lens {
     position: relative;
@@ -1606,10 +1558,6 @@
 
 
 
-/* ==========================================================
-   TRUST STRIP — TABLET / MOBILE COMPACT CARDS
-   ========================================================== */
-
 @media (max-width: 1180px) {
     .trust-strip__items {
         gap: 12px;
@@ -1680,10 +1628,6 @@
         line-height: 1.38;
     }
 }
-
-/* ==========================================================
-   TRUST STRIP — TABLET / MOBILE COMPACT CARDS + HOVERS
-   ========================================================== */
 
 @media (max-width: 1180px) {
     .trust-strip__items {

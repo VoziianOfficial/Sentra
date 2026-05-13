@@ -1,15 +1,5 @@
 "use strict";
 
-/* ==========================================================
-   Sentra — About Page Script
-   Handles:
-   - subtle hero motion
-   - platform media motion
-   - CTA radar motion
-   - section reveal
-   - image fallback classes
-   ========================================================== */
-
 (function () {
     document.addEventListener("DOMContentLoaded", initAboutPage);
 
@@ -20,10 +10,6 @@
         initSectionReveal();
         initImageFallbacks();
     }
-
-    /* ==========================================================
-       HERO MOTION
-       ========================================================== */
 
     function initAboutHeroMotion() {
         const hero = document.querySelector(".about-hero");
@@ -71,10 +57,6 @@
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
 
-    /* ==========================================================
-       PLATFORM MEDIA MOTION
-       ========================================================== */
-
     function initPlatformMediaMotion() {
         const section = document.querySelector(".platform-model");
 
@@ -112,10 +94,6 @@
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
 
-    /* ==========================================================
-       CTA MOTION
-       ========================================================== */
-
     function initCtaMotion() {
         const cta = document.querySelector(".about-cta");
 
@@ -147,10 +125,6 @@
         update();
         window.addEventListener("scroll", requestUpdate, { passive: true });
     }
-
-    /* ==========================================================
-       SECTION REVEAL
-       ========================================================== */
 
     function initSectionReveal() {
         const sections = document.querySelectorAll(
@@ -216,10 +190,6 @@
         document.head.appendChild(style);
     }
 
-    /* ==========================================================
-       IMAGE FALLBACKS
-       ========================================================== */
-
     function initImageFallbacks() {
         const images = document.querySelectorAll(".about-page img");
 
@@ -244,10 +214,6 @@
 
         image.style.display = "none";
     }
-
-    /* ==========================================================
-       HELPERS
-       ========================================================== */
 
     function prefersReducedMotion() {
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;

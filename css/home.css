@@ -10,10 +10,6 @@
     clip: rect(0, 0, 0, 0);
 }
 
-/* ==========================================================
-   HOME / HERO
-   ========================================================== */
-
 .home-hero {
     position: relative;
     min-height: clamp(680px, 82vh, 780px);
@@ -255,10 +251,6 @@
     bottom: 16%;
 }
 
-/* ==========================================================
-   HOME / SERVICES
-   ========================================================== */
-
 .home-services {
     position: relative;
     overflow: clip;
@@ -324,10 +316,6 @@
 .home-services .photo-card p {
     font-size: 0.78rem;
 }
-
-/* ==========================================================
-   HOME / PROCESS
-   ========================================================== */
 
 .home-process {
     position: relative;
@@ -430,10 +418,6 @@
     line-height: 1.45;
 }
 
-/* ==========================================================
-   HOME / PROTECTION SPLIT
-   ========================================================== */
-
 .home-protection {
     position: relative;
     overflow: clip;
@@ -535,10 +519,6 @@
     color: rgba(245, 245, 239, 0.74);
     font-size: 0.95rem;
 }
-
-/* ==========================================================
-   HOME / QUOTE STRIP
-   ========================================================== */
 
 .home-quote {
     position: relative;
@@ -644,10 +624,6 @@
     margin: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
 
 @media (max-width: 1180px) {
     .home-hero__inner {
@@ -878,10 +854,6 @@
             transparent 1px 38px);
 }
 
-/* ==========================================================
-   PROCESS ROUTE / NUMBER HOVERS
-   ========================================================== */
-
 .process-route__number {
     position: relative;
     z-index: 2;
@@ -922,10 +894,6 @@
         opacity var(--transition-base),
         transform var(--transition-base);
 }
-
-/* ==========================================================
-   HOME LIGHT CTA / NO FORM
-   ========================================================== */
 
 .home-quote--light {
     position: relative;
@@ -1061,8 +1029,6 @@
     border-top: 1px solid rgba(25, 26, 27, 0.12);
 }
 
-/* Responsive */
-
 @media (max-width: 1180px) {
     .home-quote-light {
         grid-template-columns: 1fr;
@@ -1111,10 +1077,6 @@
         min-height: auto;
     }
 }
-
-/* ==========================================================
-   HOME LIGHT CTA / STATUS HOVERS
-   ========================================================== */
 
 .home-quote-light__status span {
     position: relative;
@@ -1218,10 +1180,6 @@
         font-size: 0.74rem;
     }
 }
-
-/* ==========================================================
-   PROVIDER COMPARISON FACTORS
-   ========================================================== */
 
 .provider-factors {
     position: relative;
@@ -1416,10 +1374,6 @@
         font-size: 2.6rem;
     }
 }
-
-/* ==========================================================
-   HOME QUOTE STATUS — TABLET / MOBILE COMPACT
-   ========================================================== */
 
 @media (max-width: 1180px) {
     .home-quote-light__status {

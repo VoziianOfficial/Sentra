@@ -38,10 +38,6 @@
     document.documentElement.classList.add("site-ready");
   }
 
-  /* ==========================================================
-     PAGE META
-     ========================================================== */
-
   function applyPageMeta() {
     const page = getCurrentPage();
     const meta = config.pageMeta && config.pageMeta[page];
@@ -67,10 +63,6 @@
       description.setAttribute("content", meta.description);
     }
   }
-
-  /* ==========================================================
-     HEADER
-     ========================================================== */
 
   function renderHeader() {
     const mount = document.querySelector("[data-site-header]");
@@ -448,10 +440,6 @@
     });
   }
 
-  /* ==========================================================
-     FOOTER
-     ========================================================== */
-
   function renderFooter() {
     const mount = document.querySelector("[data-site-footer]");
 
@@ -552,10 +540,6 @@
   `;
   }
 
-  /* ==========================================================
-     DYNAMIC CONTENT
-     ========================================================== */
-
   function injectDynamicContent() {
     setText("[data-company-name]", config.companyName);
     setText("[data-company-id]", config.companyId);
@@ -580,6 +564,121 @@
     document.querySelectorAll("[data-phone-label]").forEach((element) => {
       element.textContent = config.phoneLabel;
     });
+  }
+
+  function replaceLegacyContent() {
+    const legacy = config.legacyContent;
+
+    if (!legacy) return;
+
+    const replacements = [];
+
+    addReplacementGroup(legacy.companyNames, config.companyName);
+    addReplacementGroup(legacy.companyIds, config.companyId);
+    addReplacementGroup(legacy.phones, config.phone);
+    addReplacementGroup(legacy.phoneHrefs, config.phoneHref);
+    addReplacementGroup(legacy.emails, config.email);
+    addReplacementGroup(legacy.emailHrefs, `mailto:${config.email}`);
+    addReplacementGroup(legacy.addresses, config.address && config.address.full);
+
+    if (!replacements.length) return;
+
+    replaceTextNodes(document.body);
+    replaceAttributes(document.body);
+    replaceHeadContent();
+
+    function addReplacementGroup(values, replacement) {
+      if (!Array.isArray(values) || !replacement) return;
+
+      values.forEach((value) => {
+        if (!value || value === replacement) return;
+
+        replacements.push({
+          from: String(value),
+          to: String(replacement)
+        });
+      });
+    }
+
+    function replaceTextNodes(root) {
+      const walker = document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode(node) {
+            const parent = node.parentElement;
+
+            if (!parent) return NodeFilter.FILTER_REJECT;
+
+            const tag = parent.tagName.toLowerCase();
+
+            if (["script", "style", "noscript", "svg"].includes(tag)) {
+              return NodeFilter.FILTER_REJECT;
+            }
+
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        }
+      );
+
+      const textNodes = [];
+
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+      }
+
+      textNodes.forEach((node) => {
+        node.nodeValue = replaceString(node.nodeValue);
+      });
+    }
+
+    function replaceAttributes(root) {
+      const attributesToUpdate = [
+        "href",
+        "aria-label",
+        "alt",
+        "title",
+        "content",
+        "placeholder",
+        "value"
+      ];
+
+      root.querySelectorAll("*").forEach((element) => {
+        attributesToUpdate.forEach((attribute) => {
+          if (!element.hasAttribute(attribute)) return;
+
+          const currentValue = element.getAttribute(attribute);
+          const nextValue = replaceString(currentValue);
+
+          if (nextValue !== currentValue) {
+            element.setAttribute(attribute, nextValue);
+          }
+        });
+      });
+    }
+
+    function replaceHeadContent() {
+      document.title = replaceString(document.title);
+
+      document.querySelectorAll("meta[content]").forEach((meta) => {
+        const currentValue = meta.getAttribute("content");
+        const nextValue = replaceString(currentValue);
+
+        if (nextValue !== currentValue) {
+          meta.setAttribute("content", nextValue);
+        }
+      });
+    }
+
+    function replaceString(value) {
+      let output = String(value || "");
+
+      replacements.forEach(({ from, to }) => {
+        output = output.split(from).join(to);
+      });
+
+      return output;
+    }
   }
 
   function setText(selector, value) {
@@ -624,10 +723,6 @@
       `;
     });
   }
-
-  /* ==========================================================
-     SERVICE CARDS
-     ========================================================== */
 
   function renderServiceCards() {
     document.querySelectorAll("[data-service-cards]").forEach((mount) => {
@@ -679,10 +774,6 @@
         .join("");
     });
   }
-
-  /* ==========================================================
-     SECTION NAVIGATION
-     ========================================================== */
 
   function renderSectionNavigation() {
     document.querySelectorAll("[data-section-nav]").forEach((mount) => {
@@ -749,10 +840,6 @@
     byId.forEach(({ section }) => observer.observe(section));
   }
 
-  /* ==========================================================
-     SECURITY TICKER
-     ========================================================== */
-
   function renderSecurityTicker() {
     document.querySelectorAll("[data-security-ticker]").forEach((mount) => {
       const items = Array.isArray(config.tickerItems) ? config.tickerItems : [];
@@ -775,10 +862,6 @@
       `;
     });
   }
-
-  /* ==========================================================
-     FAQ
-     ========================================================== */
 
   function renderFaqBlocks() {
     document.querySelectorAll("[data-faq-list]").forEach((mount, blockIndex) => {
@@ -861,10 +944,6 @@
     });
   }
 
-  /* ==========================================================
-     FORMS
-     ========================================================== */
-
   function initForms() {
     document.querySelectorAll("form[data-form-type]").forEach((form) => {
       form.setAttribute("novalidate", "");
@@ -922,10 +1001,6 @@
     return true;
   }
 
-  /* ==========================================================
-     COOKIE / POLICY BANNER
-     ========================================================== */
-
   function renderPolicyBanner() {
     let mount = document.querySelector("[data-policy-banner]");
 
@@ -981,10 +1056,6 @@
     });
   }
 
-  /* ==========================================================
-     SMOOTH ANCHORS / EMPTY LINKS
-     ========================================================== */
-
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", (event) => {
@@ -1013,10 +1084,6 @@
       });
     });
   }
-
-  /* ==========================================================
-     HELPERS
-     ========================================================== */
 
   function getCurrentPage() {
     const path = window.location.pathname;

@@ -6,71 +6,56 @@
 @import url("./legal.css");
 
 :root {
-    /* Main backgrounds */
     --color-bg: #2b2d2f;
     --color-bg-deep: #1f2123;
     --color-bg-soft: #34373a;
     --color-bg-light: #d9d9d4;
     --color-bg-lighter: #efefeb;
 
-    /* Surfaces */
     --color-surface: #3a3d40;
     --color-surface-2: #45494d;
     --color-surface-light: #f4f4f0;
     --color-panel: #292b2d;
 
-    /* Text on dark */
     --color-heading: #f5f5ef;
     --color-text: #d9d9d2;
     --color-muted: #a9aaa4;
 
-    /* Text on light */
     --color-heading-dark: #191a1b;
     --color-text-dark: #393b3d;
     --color-muted-dark: #6f7173;
 
-    /* Main accent */
     --color-accent: #f5c542;
     --color-accent-hover: #e3b42f;
     --color-accent-strong: #c99616;
     --color-accent-soft: rgba(245, 197, 66, 0.16);
 
-    /* White / line details */
     --color-white: #ffffff;
     --color-border: rgba(255, 255, 255, 0.12);
     --color-border-strong: rgba(255, 255, 255, 0.22);
     --color-border-dark: rgba(25, 26, 27, 0.14);
     --color-line-yellow: rgba(245, 197, 66, 0.45);
 
-    /* Shadows */
     --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.28);
     --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.2);
     --shadow-yellow-glow: 0 0 26px rgba(245, 197, 66, 0.2);
 
-    /* Layout */
     --container: 1180px;
     --container-wide: 1360px;
     --header-height: 82px;
 
-    /* Type */
     --font-main: "Inter", "Manrope", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-display: "Space Grotesk", "Inter", "Manrope", sans-serif;
 
-    /* Motion */
     --transition-fast: 180ms ease;
     --transition-base: 260ms ease;
     --transition-slow: 420ms ease;
 
-    /* Radius */
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 22px 8px 22px 8px;
     --radius-xl: 28px 12px 18px 12px;
 }
-
-/* ==========================================================
-   RESET / BASE
-   ========================================================== */
 
 *,
 *::before,
@@ -224,10 +209,6 @@ p:last-child {
 .skip-link:focus {
     transform: translateY(0);
 }
-
-/* ==========================================================
-   LAYOUT HELPERS
-   ========================================================== */
 
 .page-shell {
     position: relative;
@@ -600,10 +581,6 @@ h4 {
     background: linear-gradient(90deg, transparent, rgba(245, 197, 66, 0.55), rgba(255, 255, 255, 0.12), transparent);
 }
 
-/* ==========================================================
-   BUTTONS / LINKS
-   ========================================================== */
-
 .btn {
     position: relative;
     display: inline-flex;
@@ -689,10 +666,6 @@ h4 {
 .text-link:hover::after {
     transform: translateX(4px);
 }
-
-/* ==========================================================
-   FORMS
-   ========================================================== */
 
 .form-grid {
     display: grid;
@@ -797,10 +770,6 @@ h4 {
     border-color: rgba(245, 197, 66, 0.5);
     background: rgba(245, 197, 66, 0.06);
 }
-
-/* ==========================================================
-   HEADER
-   ========================================================== */
 
 .site-header {
     position: relative;
@@ -1153,10 +1122,6 @@ h4 {
     width: 14px;
 }
 
-/* ==========================================================
-   MOBILE MENU
-   ========================================================== */
-
 .mobile-menu {
     position: fixed;
     inset: 0;
@@ -1307,10 +1272,6 @@ h4 {
     font-size: 0.76rem;
 }
 
-/* ==========================================================
-   SERVICE CARDS / GLOBAL PHOTO CARDS
-   ========================================================== */
-
 .photo-card {
     position: relative;
     display: flex;
@@ -1429,10 +1390,6 @@ h4 {
     opacity: 1;
 }
 
-/* ==========================================================
-   SECTION NAVIGATION
-   ========================================================== */
-
 .section-nav {
     position: fixed;
     top: 50%;
@@ -1503,10 +1460,6 @@ h4 {
     color: var(--color-accent);
 }
 
-/* ==========================================================
-   TICKER
-   ========================================================== */
-
 .security-ticker {
     position: relative;
     overflow: hidden;
@@ -1552,10 +1505,6 @@ h4 {
 .security-ticker__item:hover {
     color: var(--color-accent);
 }
-
-/* ==========================================================
-   FAQ
-   ========================================================== */
 
 .faq-list {
     display: grid;
@@ -1649,10 +1598,6 @@ h4 {
     font-size: 0.95rem;
 }
 
-/* ==========================================================
-   FOOTER
-   ========================================================== */
-
 .site-footer {
     position: relative;
     z-index: 1;
@@ -1742,10 +1687,6 @@ h4 {
     border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-/* ==========================================================
-   COOKIE BANNER
-   ========================================================== */
-
 .policy-banner {
     position: fixed;
     right: 18px;
@@ -1797,10 +1738,6 @@ h4 {
     gap: 10px;
 }
 
-/* ==========================================================
-   ANIMATIONS
-   ========================================================== */
-
 @keyframes radarSpin {
     to {
         transform: rotate(360deg);
@@ -1838,10 +1775,6 @@ h4 {
         transform: translateX(-50%);
     }
 }
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
 
 @media (max-width: 1180px) {
     :root {
@@ -2067,10 +2000,6 @@ h4 {
     }
 }
 
-/* ==========================================================
-   FIXED HEADER FALLBACK
-   ========================================================== */
-
 [data-site-header] {
     position: fixed;
     top: 0;
@@ -2133,10 +2062,6 @@ h4 {
     height: 13px;
 }
 
-/* ==========================================================
-   GLOBAL OVERLAP SAFETY FIX
-   ========================================================== */
-
 .contact-info-panel,
 .service-area-map__content,
 .platform-model__panel,
@@ -2190,10 +2115,6 @@ h4 {
 .service-index__grid .service-card:hover .text-link::after {
     transform: translateX(4px);
 }
-
-/* ==========================================================
-   MOBILE / TABLET HEADER BUTTON POSITION FIX
-   ========================================================== */
 
 @media (max-width: 1180px) {
     .site-header__inner {

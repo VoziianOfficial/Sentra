@@ -1,7 +1,3 @@
-/* ==========================================================
-   SERVICES PAGE / HERO
-   ========================================================== */
-
 .services-hero {
     position: relative;
     min-height: clamp(560px, 72vh, 720px);
@@ -158,10 +154,6 @@
     width: 48%;
 }
 
-/* ==========================================================
-   SERVICE INDEX
-   ========================================================== */
-
 .service-index {
     position: relative;
     overflow: clip;
@@ -244,19 +236,11 @@
         linear-gradient(180deg, rgba(31, 33, 35, 0.12), rgba(31, 33, 35, 0.86));
 }
 
-/* ==========================================================
-   SERVICES TICKER
-   ========================================================== */
-
 .services-ticker-section {
     position: relative;
     z-index: 1;
     background: var(--color-bg-deep);
 }
-
-/* ==========================================================
-   MATCHING LOGIC
-   ========================================================== */
 
 .matching-logic {
     position: relative;
@@ -417,10 +401,6 @@
     transform: translateY(-50%) rotate(45deg);
 }
 
-/* ==========================================================
-   SERVICES CTA
-   ========================================================== */
-
 .services-cta {
     position: relative;
     overflow: clip;
@@ -539,10 +519,6 @@
     grid-column: 1 / -1;
 }
 
-/* ==========================================================
-   IMAGE FALLBACKS
-   ========================================================== */
-
 .services-hero__bg.is-image-missing,
 .services-cta__media.is-image-missing,
 .service-index .photo-card.is-image-missing {
@@ -550,10 +526,6 @@
         radial-gradient(circle at 70% 30%, rgba(245, 197, 66, 0.14), transparent 28%),
         linear-gradient(135deg, #3a3d40, #1f2123);
 }
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
 
 @media (max-width: 1180px) {
     .services-hero__inner {
@@ -705,10 +677,6 @@
         grid-template-columns: 1fr;
     }
 }
-
-/* ==========================================================
-   PROVIDER CHECKLIST
-   ========================================================== */
 
 .provider-checklist {
     position: relative;
@@ -912,10 +880,6 @@
     }
 }
 
-/* ==========================================================
-   PROVIDER CHECKLIST PHOTO — NO HOVER, SOFT AUTO ANIMATION
-   ========================================================== */
-
 .provider-checklist__photo img {
     transform: none !important;
     filter: contrast(1.08) brightness(0.86) !important;
@@ -927,7 +891,6 @@
     filter: contrast(1.08) brightness(0.86) !important;
 }
 
-/* мягкая анимация внутри фото, без hover */
 .provider-checklist__photo::after {
     position: absolute;
     inset: 0;
@@ -962,5 +925,41 @@
     100% {
         transform: translateX(120%);
         opacity: 0;
+    }
+}
+
+/* ==========================================================
+   PROVIDER CHECKLIST — DESKTOP COMPACT CARDS
+   ========================================================== */
+
+@media (min-width: 1181px) {
+    .provider-checklist__items {
+        gap: 12px;
+    }
+
+    .provider-checklist__item {
+        min-height: auto;
+        padding: 16px 18px;
+        gap: 14px;
+        align-items: flex-start;
+    }
+
+    .provider-checklist__item>span {
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+        font-size: 0.78rem;
+    }
+
+    .provider-checklist__item h3 {
+        margin-bottom: 4px;
+        font-size: 1rem;
+        line-height: 1.12;
+    }
+
+    .provider-checklist__item p {
+        margin: 0;
+        font-size: 0.84rem;
+        line-height: 1.38;
     }
 }
