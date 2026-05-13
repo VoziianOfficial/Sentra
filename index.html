@@ -259,64 +259,66 @@
                 </div>
             </section>
 
-            <!-- =====================================================
-           05 / QUOTE CTA
-           ===================================================== -->
-            <section class="home-quote section--compact" id="quote" aria-labelledby="homeQuoteTitle">
-                <div class="container-wide">
-                    <div class="quote-strip">
-                        <div class="quote-strip__heading">
-                            <span class="section-kicker">Get Started</span>
-
-                            <h2 id="homeQuoteTitle" class="upper-title">
-                                Request quotes.<br>
-                                Stay <span class="text-accent">protected.</span>
-                            </h2>
-                        </div>
-
-                        <form class="quote-strip__form" data-form-type="quote">
-                            <label class="field">
-                                <span class="sr-only">ZIP Code</span>
-                                <input type="text" name="zip" inputmode="numeric" autocomplete="postal-code"
-                                    placeholder="ZIP Code" data-required data-validate="zip">
-                            </label>
-
-                            <label class="field field--select">
-                                <span class="sr-only">Property Type</span>
-                                <select name="property" data-property-select data-required>
-                                    <option value="">Property Type</option>
-                                </select>
-                            </label>
-
-                            <label class="field field--select">
-                                <span class="sr-only">Service Type</span>
-                                <select name="service" data-service-select data-required>
-                                    <option value="">Service Type</option>
-                                </select>
-                            </label>
-
-                            <button class="btn btn--primary" type="submit">
-                                Get Quotes
-                            </button>
-
-                            <p class="form-status quote-strip__status" data-form-status role="status"
-                                aria-live="polite"></p>
-                        </form>
-
-                        <div class="quote-strip__notes" aria-label="Important notes">
-                            <span>100% free to use</span>
-                            <span>No obligation</span>
-                            <span>Independent providers</span>
-                            <span>Availability varies by area</span>
-                        </div>
-
-                        <p class="legal-note quote-strip__legal" data-legal-notice>
-                            Sentra is an independent provider matching platform. Provider availability, pricing,
-                            licensing, insurance, timelines, and service details vary by provider and location.
-                        </p>
+        <!-- =====================================================
+             05 / LIGHT CTA
+             ===================================================== -->
+        <section class="home-quote home-quote--light section section--light" id="quote" aria-labelledby="homeQuoteTitle">
+            <div class="body-target home-quote__target" aria-hidden="true"></div>
+            <span class="technical-line home-quote__line" aria-hidden="true"></span>
+            <span class="target-dot target-dot--yellow home-quote__dot" aria-hidden="true"></span>
+        
+            <div class="container-wide">
+                <div class="home-quote-light">
+                    <div class="home-quote-light__heading">
+                        <span class="section-kicker">Get Started</span>
+        
+                        <h2 id="homeQuoteTitle" class="upper-title">
+                            Compare provider<br>
+                            options with <span class="text-accent">clarity.</span>
+                        </h2>
                     </div>
+        
+                    <div class="home-quote-light__content">
+                        <p>
+                            Sentra helps homeowners and businesses compare independent security provider
+                            options for CCTV systems, alarm systems, access control, and monitoring-related requests.
+                        </p>
+        
+                        <div class="home-quote-light__actions">
+                            <a class="btn btn--primary" href="contact.html">Start Matching</a>
+                            <a class="btn btn--dark-outline" href="services.html">View Services</a>
+                        </div>
+                    </div>
+        
+                    <div class="home-quote-light__status" aria-label="Important platform notes">
+                        <span>
+                            <strong>01</strong>
+                            Free matching request
+                        </span>
+        
+                        <span>
+                            <strong>02</strong>
+                            Independent providers
+                        </span>
+        
+                        <span>
+                            <strong>03</strong>
+                            Availability varies by area
+                        </span>
+        
+                        <span>
+                            <strong>04</strong>
+                            Users verify provider details
+                        </span>
+                    </div>
+        
+                    <p class="legal-note home-quote-light__legal" data-legal-notice>
+                        Sentra is an independent provider matching platform. Provider availability, pricing,
+                        licensing, insurance, timelines, and service details vary by provider and location.
+                    </p>
                 </div>
-            </section>
+            </div>
+        </section>
         </main>
 
         <div data-site-footer></div>

@@ -844,7 +844,7 @@ a.contact-info-panel__row:hover {
 
     .contact-hero__panel {
         width: min(100%, 380px);
-        justify-self:end;
+        justify-self:flex-end;
         margin-left: clamp(-92px, -5vw, -42px);
     }
 }
@@ -871,4 +871,3 @@ a.contact-info-panel__row:hover {
         justify-content: center;
     }
 }
-

@@ -74,52 +74,64 @@
                 </div>
             </section>
 
-            <!-- =====================================================
-           02 / PLATFORM MODEL
-           ===================================================== -->
-            <section class="platform-model section section--medium" id="platform-model"
-                aria-labelledby="platformModelTitle">
-                <div class="body-target body-target--large platform-model__target" aria-hidden="true"></div>
-                <span class="technical-line platform-model__line" aria-hidden="true"></span>
-
-                <div class="container-wide">
-                    <div class="platform-model__layout">
-                        <div class="platform-model__media">
-                            <img src="./assets/images/about-platform.jpg"
-                                alt="Security provider matching workflow on a modern desk">
-                            <span class="hud-label hud-label--active">Provider Matching</span>
-                            <span class="platform-model__corner platform-model__corner--one" aria-hidden="true"></span>
-                            <span class="platform-model__corner platform-model__corner--two" aria-hidden="true"></span>
-                        </div>
-
-                        <article class="platform-model__panel corner-brackets">
-                            <span class="section-kicker">Platform Model</span>
-
-                            <h2 id="platformModelTitle" class="upper-title">
-                                Built for comparison,<br>
-                                not direct service.
-                            </h2>
-
-                            <p>
-                                Sentra is a provider matching platform. The website helps users organize a
-                                security-related request and compare independent provider options where available.
-                            </p>
-
-                            <div class="platform-model__checks" aria-label="Platform model statements">
-                                <span>Not a direct security company</span>
-                                <span>Not a contractor or installer</span>
-                                <span>Providers are independent</span>
-                                <span>Users verify all provider details</span>
-                            </div>
-
-                            <p class="legal-note" data-legal-notice>
-                                Sentra is an independent provider matching platform. We do not install, repair,
-                                monitor, or perform security services directly.
-                            </p>
-                        </article>
+    <!-- =====================================================
+         02 / PLATFORM MODEL
+         ===================================================== -->
+    <section class="platform-model platform-model--cards section section--medium" id="platform-model"
+        aria-labelledby="platformModelTitle">
+        <div class="body-target body-target--large platform-model__target" aria-hidden="true"></div>
+        <span class="technical-line platform-model__line" aria-hidden="true"></span>
+    
+        <div class="container-wide">
+            <div class="platform-model__layout">
+                <figure class="platform-model__photo-card">
+                    <img src="./assets/images/about-platform.jpg"
+                        alt="Security provider matching workflow on a modern desk">
+    
+                    <figcaption class="platform-model__photo-caption">
+                        <span class="hud-label hud-label--active">Provider Matching</span>
+    
+                        <strong>Independent security provider options</strong>
+    
+                        <p>
+                            Sentra helps organize requests before users compare local provider details.
+                        </p>
+                    </figcaption>
+    
+                    <span class="platform-model__corner platform-model__corner--one" aria-hidden="true"></span>
+                    <span class="platform-model__corner platform-model__corner--two" aria-hidden="true"></span>
+                    <span class="platform-model__scan" aria-hidden="true"></span>
+                </figure>
+    
+                <article class="platform-model__panel corner-brackets">
+                    <span class="section-kicker">Platform Model</span>
+    
+                    <h2 id="platformModelTitle" class="upper-title">
+                        Built for comparison,<br>
+                        not direct service.
+                    </h2>
+    
+                    <p>
+                        Sentra is a provider matching platform. The website helps homeowners and
+                        businesses organize security-related requests and compare independent provider
+                        options where available.
+                    </p>
+    
+                    <div class="platform-model__checks" aria-label="Platform model statements">
+                        <span>Not a direct security company</span>
+                        <span>Not a contractor or installer</span>
+                        <span>Providers are independent</span>
+                        <span>Users verify all provider details</span>
                     </div>
-                </div>
-            </section>
+    
+                    <p class="legal-note" data-legal-notice>
+                        Sentra is an independent provider matching platform. We do not install, repair,
+                        monitor, or perform security services directly.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
 
             <!-- =====================================================
            03 / HOW THE PLATFORM HELPS
@@ -236,65 +248,49 @@
                 </div>
             </section>
 
-            <!-- =====================================================
-           05 / ABOUT CTA
-           ===================================================== -->
-            <section class="about-cta section--compact" id="about-cta" aria-labelledby="aboutCtaTitle">
-                <div class="scanner-grid" aria-hidden="true"></div>
-                <div class="security-radar about-cta__radar" aria-hidden="true"></div>
-
-                <div class="container-wide">
-                    <div class="about-cta__strip">
-                        <div class="about-cta__content">
-                            <span class="section-kicker">Start Comparing</span>
-
-                            <h2 id="aboutCtaTitle" class="upper-title">
-                                Ready to compare<br>
-                                provider <span class="text-accent">options?</span>
-                            </h2>
-
-                            <p>
-                                Share your ZIP code, property type, and security category. Sentra helps
-                                route your request toward independent provider options where available.
-                            </p>
-                        </div>
-
-                        <form class="about-cta__form" data-form-type="quote">
-                            <label class="field">
-                                <span class="sr-only">ZIP Code</span>
-                                <input type="text" name="zip" inputmode="numeric" autocomplete="postal-code"
-                                    placeholder="ZIP Code" data-required data-validate="zip">
-                            </label>
-
-                            <label class="field field--select">
-                                <span class="sr-only">Property Type</span>
-                                <select name="property" data-property-select data-required>
-                                    <option value="">Property Type</option>
-                                </select>
-                            </label>
-
-                            <label class="field field--select">
-                                <span class="sr-only">Service Type</span>
-                                <select name="service" data-service-select data-required>
-                                    <option value="">Service Type</option>
-                                </select>
-                            </label>
-
-                            <button class="btn btn--primary" type="submit">
-                                Get Matched
-                            </button>
-
-                            <p class="form-status about-cta__status" data-form-status role="status" aria-live="polite">
-                            </p>
-                        </form>
-
-                        <p class="legal-note about-cta__legal" data-disclaimer>
-                            Disclaimer: This site is a free service to assist homeowners in connecting with local
-                            service providers.
-                        </p>
+    <!-- =====================================================
+         05 / ABOUT CTA
+         ===================================================== -->
+    <section class="about-cta about-cta--compact-line section--compact" id="about-cta" aria-labelledby="aboutCtaTitle">
+        <span class="technical-line about-cta__line" aria-hidden="true"></span>
+        <span class="target-dot target-dot--yellow about-cta__dot" aria-hidden="true"></span>
+    
+        <div class="container-wide">
+            <div class="about-cta-line">
+                <div class="about-cta-line__title">
+                    <span class="section-kicker">Start Comparing</span>
+    
+                    <h2 id="aboutCtaTitle" class="upper-title">
+                        Compare provider<br>
+                        <span class="text-accent">options.</span>
+                    </h2>
+                </div>
+    
+                <div class="about-cta-line__text">
+                    <p>
+                        Sentra helps route security requests toward independent provider options
+                        for CCTV systems, alarms, access control, and monitoring-related needs.
+                    </p>
+    
+                    <div class="about-cta-line__points" aria-label="Platform notes">
+                        <span>Independent platform</span>
+                        <span>Provider availability varies</span>
+                        <span>Users verify details</span>
                     </div>
                 </div>
-            </section>
+    
+                <div class="about-cta-line__actions">
+                    <a class="btn btn--primary" href="contact.html">Start Matching</a>
+                    <a class="btn btn--outline" href="services.html">View Services</a>
+                </div>
+    
+                <p class="legal-note about-cta-line__legal" data-legal-notice>
+                    Sentra is an independent provider matching platform. Provider availability, pricing,
+                    licensing, insurance, timelines, and service details vary by provider and location.
+                </p>
+            </div>
+        </div>
+    </section>
         </main>
 
         <div data-site-footer></div>
