@@ -1934,10 +1934,7 @@
     }
 }
 
-/* ==========================================================
-   PROVIDER CHECKLIST — MOBILE NORMAL FIX
-   fixes both .provider-checklist__items and .provider-checklist__grid
-   ========================================================== */
+
 
 .provider-checklist__items,
 .provider-checklist__grid {

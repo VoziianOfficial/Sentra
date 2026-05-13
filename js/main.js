@@ -24,7 +24,23 @@
     renderPolicyBanner();
 
     injectDynamicContent();
+    replaceLegacyContent();
     hydrateSelectOptions();
+
+    window.addEventListener("load", () => {
+      injectDynamicContent();
+      replaceLegacyContent();
+    });
+
+    setTimeout(() => {
+      injectDynamicContent();
+      replaceLegacyContent();
+    }, 300);
+
+    setTimeout(() => {
+      injectDynamicContent();
+      replaceLegacyContent();
+    }, 1000);
 
     initHeaderScroll();
     initServicesDropdown();
@@ -566,41 +582,86 @@
     });
   }
 
-  function replaceLegacyContent() {
-    const legacy = config.legacyContent;
-
-    if (!legacy) return;
+  function replaceLegacyContent(options = {}) {
+    const legacy = config.legacyContent || {};
+    const brand = config.brand || {};
+    const address = config.address || {};
 
     const replacements = [];
+    const seen = new Set();
 
-    addReplacementGroup(legacy.companyNames, config.companyName);
-    addReplacementGroup(legacy.companyIds, config.companyId);
-    addReplacementGroup(legacy.phones, config.phone);
-    addReplacementGroup(legacy.phoneHrefs, config.phoneHref);
-    addReplacementGroup(legacy.emails, config.email);
-    addReplacementGroup(legacy.emailHrefs, `mailto:${config.email}`);
-    addReplacementGroup(legacy.addresses, config.address && config.address.full);
+    const currentCompanyName = config.companyName || brand.logoText || brand.shortName || "";
+    const currentCompanyId = config.companyId || "";
+    const currentPhone = config.phone || "";
+    const currentPhoneHref = config.phoneHref || "";
+    const currentPhoneLabel = config.phoneLabel || "";
+    const currentEmail = config.email || "";
+    const currentEmailHref = currentEmail ? `mailto:${currentEmail}` : "";
+    const currentAddress = address.full || "";
+
+    addReplacementGroup(legacy.companyNames, currentCompanyName);
+    addReplacementGroup(legacy.companyIds, currentCompanyId);
+    addReplacementGroup(legacy.phones, currentPhone);
+    addReplacementGroup(legacy.phoneHrefs, currentPhoneHref);
+    addReplacementGroup(legacy.emails, currentEmail);
+    addReplacementGroup(legacy.emailHrefs, currentEmailHref);
+    addReplacementGroup(legacy.addresses, currentAddress);
+
+    /* Extra common old strings */
+    addReplacement("Sentra Provider Matching LLC", currentCompanyId);
+    addReplacement("Sentra home", brand.logoLabel || `${currentCompanyName} home`);
+    addReplacement("Call Sentra at (877) 555-0186", currentPhoneLabel);
+    addReplacement("Sentra", currentCompanyName);
+    addReplacement("(877) 555-0186", currentPhone);
+    addReplacement("tel:+18775550186", currentPhoneHref);
+    addReplacement("hello@sentramatch.com", currentEmail);
+    addReplacement("mailto:hello@sentramatch.com", currentEmailHref);
+    addReplacement("1428 Congress Ave, Suite 210, Austin, TX 78701, USA", currentAddress);
+
+    replacements.sort((a, b) => b.from.length - a.from.length);
 
     if (!replacements.length) return;
 
+    replaceHeadContent();
     replaceTextNodes(document.body);
     replaceAttributes(document.body);
-    replaceHeadContent();
+
+    if (!options.skipObserver) {
+      setupLegacyContentObserver();
+    }
 
     function addReplacementGroup(values, replacement) {
-      if (!Array.isArray(values) || !replacement) return;
+      if (!Array.isArray(values)) return;
 
       values.forEach((value) => {
-        if (!value || value === replacement) return;
+        addReplacement(value, replacement);
+      });
+    }
 
-        replacements.push({
-          from: String(value),
-          to: String(replacement)
-        });
+    function addReplacement(from, to) {
+      if (!from || !to) return;
+
+      const fromString = String(from);
+      const toString = String(to);
+
+      if (!fromString.trim()) return;
+      if (fromString === toString) return;
+
+      const key = `${fromString}=>${toString}`;
+
+      if (seen.has(key)) return;
+
+      seen.add(key);
+
+      replacements.push({
+        from: fromString,
+        to: toString
       });
     }
 
     function replaceTextNodes(root) {
+      if (!root) return;
+
       const walker = document.createTreeWalker(
         root,
         NodeFilter.SHOW_TEXT,
@@ -616,23 +677,29 @@
               return NodeFilter.FILTER_REJECT;
             }
 
+            if (!node.nodeValue || !hasLegacyValue(node.nodeValue)) {
+              return NodeFilter.FILTER_REJECT;
+            }
+
             return NodeFilter.FILTER_ACCEPT;
           }
         }
       );
 
-      const textNodes = [];
+      const nodes = [];
 
       while (walker.nextNode()) {
-        textNodes.push(walker.currentNode);
+        nodes.push(walker.currentNode);
       }
 
-      textNodes.forEach((node) => {
+      nodes.forEach((node) => {
         node.nodeValue = replaceString(node.nodeValue);
       });
     }
 
     function replaceAttributes(root) {
+      if (!root) return;
+
       const attributesToUpdate = [
         "href",
         "aria-label",
@@ -640,7 +707,10 @@
         "title",
         "content",
         "placeholder",
-        "value"
+        "value",
+        "data-label",
+        "data-title",
+        "data-text"
       ];
 
       root.querySelectorAll("*").forEach((element) => {
@@ -648,6 +718,9 @@
           if (!element.hasAttribute(attribute)) return;
 
           const currentValue = element.getAttribute(attribute);
+
+          if (!currentValue || !hasLegacyValue(currentValue)) return;
+
           const nextValue = replaceString(currentValue);
 
           if (nextValue !== currentValue) {
@@ -658,10 +731,15 @@
     }
 
     function replaceHeadContent() {
-      document.title = replaceString(document.title);
+      if (document.title && hasLegacyValue(document.title)) {
+        document.title = replaceString(document.title);
+      }
 
       document.querySelectorAll("meta[content]").forEach((meta) => {
         const currentValue = meta.getAttribute("content");
+
+        if (!currentValue || !hasLegacyValue(currentValue)) return;
+
         const nextValue = replaceString(currentValue);
 
         if (nextValue !== currentValue) {
@@ -678,6 +756,51 @@
       });
 
       return output;
+    }
+
+    function hasLegacyValue(value) {
+      const text = String(value || "");
+
+      return replacements.some(({ from }) => text.includes(from));
+    }
+
+    function setupLegacyContentObserver() {
+      if (replaceLegacyContent._observer) return;
+
+      let scheduled = false;
+
+      replaceLegacyContent._observer = new MutationObserver(() => {
+        if (scheduled) return;
+
+        scheduled = true;
+
+        window.requestAnimationFrame(() => {
+          scheduled = false;
+
+          replaceLegacyContent({
+            skipObserver: true
+          });
+        });
+      });
+
+      replaceLegacyContent._observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+        attributes: true,
+        attributeFilter: [
+          "href",
+          "aria-label",
+          "alt",
+          "title",
+          "content",
+          "placeholder",
+          "value",
+          "data-label",
+          "data-title",
+          "data-text"
+        ]
+      });
     }
   }
 
