@@ -340,17 +340,17 @@ window.SITE_CONFIG = {
         services: [
             {
                 number: "01",
-                label: "Overview",
+                label: "Hero",
                 target: "services-hero"
             },
             {
                 number: "02",
-                label: "Categories",
+                label: "Index",
                 target: "service-index"
             },
             {
                 number: "03",
-                label: "Ticker",
+                label: "Feed",
                 target: "security-ticker"
             },
             {
@@ -360,7 +360,12 @@ window.SITE_CONFIG = {
             },
             {
                 number: "05",
-                label: "Quote",
+                label: "Verify",
+                target: "provider-checklist"
+            },
+            {
+                number: "06",
+                label: "Start",
                 target: "service-cta"
             }
         ],
