@@ -380,6 +380,16 @@ window.SITE_CONFIG = {
                 number: "05",
                 label: "Start",
                 target: "about-cta"
+            },
+            {
+                number: "05",
+                label: "Decision",
+                target: "about-proof"
+            },
+            {
+                number: "06",
+                label: "Start",
+                target: "about-cta"
             }
         ],
 
