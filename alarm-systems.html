@@ -213,7 +213,7 @@
                         <article class="provider-fit-line__item provider-fit-line__item--accent">
                             <span class="provider-fit-line__number">04</span>
                             <strong>Provider options</strong>
-                            <p>Compare independent companies and verify all service terms directly.</p>
+                            <p class="text-white-only">Compare independent companies and verify all service terms directly.</p>
                         </article>
                     </div>
                 </div>
@@ -249,65 +249,72 @@
                 </div>
             </section>
 
-            <!-- =====================================================
-           05 / SERVICE QUOTE CTA
-           ===================================================== -->
-            <section class="service-quote section--compact" id="service-quote" aria-labelledby="serviceQuoteTitle">
-                <div class="scanner-grid" aria-hidden="true"></div>
-                <div class="security-radar service-quote__radar" aria-hidden="true"></div>
-
-                <div class="container-wide">
-                    <div class="service-quote__strip">
-                        <div class="service-quote__content">
-                            <span class="section-kicker">Alarm Quote Request</span>
-
-                            <h2 id="serviceQuoteTitle" class="upper-title">
-                                Request alarm provider<br>
-                                options in your <span class="text-accent">area.</span>
-                            </h2>
-
-                            <p>
-                                Share your ZIP code, property type, and alarm service needs. Sentra helps
-                                route the request toward independent alarm provider options where available.
-                            </p>
-                        </div>
-
-                        <form class="service-quote__form" data-form-type="quote">
-                            <label class="field">
-                                <span class="sr-only">ZIP Code</span>
-                                <input type="text" name="zip" inputmode="numeric" autocomplete="postal-code"
-                                    placeholder="ZIP Code" data-required data-validate="zip">
-                            </label>
-
-                            <label class="field field--select">
-                                <span class="sr-only">Property Type</span>
-                                <select name="property" data-property-select data-required>
-                                    <option value="">Property Type</option>
-                                </select>
-                            </label>
-
-                            <label class="field field--select">
-                                <span class="sr-only">Service Type</span>
-                                <select name="service" data-service-select data-required>
-                                    <option value="">Service Type</option>
-                                </select>
-                            </label>
-
-                            <button class="btn btn--primary" type="submit">
-                                Request Alarm Quotes
-                            </button>
-
-                            <p class="form-status service-quote__status" data-form-status role="status"
-                                aria-live="polite"></p>
-                        </form>
-
-                        <p class="legal-note service-quote__legal" data-disclaimer>
-                            Disclaimer: This site is a free service to assist homeowners in connecting with local
-                            service providers.
-                        </p>
+        <!-- =====================================================
+             05 / SERVICE LIGHT CTA
+             ===================================================== -->
+        <section class="service-quote service-quote--light section--compact" id="service-quote"
+            aria-labelledby="serviceQuoteTitle">
+            <div class="body-target service-quote__target" aria-hidden="true"></div>
+            <span class="technical-line service-quote__line" aria-hidden="true"></span>
+            <span class="target-dot target-dot--yellow service-quote__dot" aria-hidden="true"></span>
+        
+            <div class="container-wide">
+                <div class="service-quote-light">
+                    <div class="service-quote-light__heading">
+                        <span class="section-kicker">Compare Provider Options</span>
+        
+                        <h2 id="serviceQuoteTitle" class="upper-title">
+                            Compare security provider<br>
+                            options in your <span class="text-accent">area.</span>
+                        </h2>
+                    </div>
+        
+                <div class="service-quote-light__content">
+                    <figure class="service-quote-light__photo">
+                        <img src="./assets/images/service-access-control.jpg" alt="Modern security provider service preview">
+                
+                        <figcaption>
+                            <span>Provider matching preview</span>
+                         
+                        </figcaption>
+                    </figure>
+                
+                    <p>
+                        Sentra helps route your request toward independent provider options where available.
+                        Review service fit, local availability, quote details, and provider credentials before
+                        choosing who to contact.
+                    </p>
+                
+                    <div class="service-quote-light__actions">
+                        <a class="btn btn--primary" href="contact.html">Start Matching</a>
+                        <a class="btn btn--dark-outline" href="services.html">View All Services</a>
                     </div>
                 </div>
-            </section>
+        
+                    <div class="service-quote-light__points" aria-label="Important provider matching notes">
+                        <span>
+                            <strong>01</strong>
+                            Independent providers
+                        </span>
+        
+                        <span>
+                            <strong>02</strong>
+                            Local availability varies
+                        </span>
+        
+                        <span>
+                            <strong>03</strong>
+                            Users verify details
+                        </span>
+                    </div>
+        
+                    <p class="legal-note service-quote-light__legal" data-disclaimer>
+                        Disclaimer: This site is a free service to assist homeowners in connecting with local
+                        service providers.
+                    </p>
+                </div>
+            </div>
+        </section>
         </main>
 
         <div data-site-footer></div>
