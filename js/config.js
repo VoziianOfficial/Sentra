@@ -317,11 +317,21 @@ window.SITE_CONFIG = {
             },
             {
                 number: "04",
+                label: "Feed",
+                target: "security-ticker"
+            },
+            {
+                number: "05",
                 label: "Protection",
                 target: "protection"
             },
             {
-                number: "05",
+                number: "06",
+                label: "Compare",
+                target: "provider-factors"
+            },
+            {
+                number: "07",
                 label: "Quote",
                 target: "quote"
             }
@@ -375,11 +385,6 @@ window.SITE_CONFIG = {
                 number: "04",
                 label: "Trust",
                 target: "trust-strip"
-            },
-            {
-                number: "05",
-                label: "Start",
-                target: "about-cta"
             },
             {
                 number: "05",

@@ -9,10 +9,10 @@
     <meta name="description"
         content="Compare independent local security provider options for CCTV systems, alarm systems, access control, and security monitoring requests.">
 
-<link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg?v=7">
-<link rel="alternate icon" href="./assets/icons/favicon.ico?v=7">
-<link rel="shortcut icon" href="./assets/icons/favicon.ico?v=7">
-<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png?v=7">
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg?v=7">
+    <link rel="alternate icon" href="./assets/icons/favicon.ico?v=7">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico?v=7">
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png?v=7">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -149,9 +149,7 @@
                 </div>
             </section>
 
-            <!-- =====================================================
-           03 / PROCESS
-           ===================================================== -->
+           
             <section class="home-process section--compact" id="process" aria-labelledby="homeProcessTitle">
                 <div class="container-wide">
                     <div class="home-process__layout">
@@ -209,6 +207,10 @@
                 </div>
             </section>
 
+            <section class="home-ticker-section" id="security-ticker" aria-label="Security service navigation feed">
+                <div data-security-ticker></div>
+            </section>
+
             <!-- =====================================================
            04 / PROTECTION SPLIT
            ===================================================== -->
@@ -259,66 +261,134 @@
                 </div>
             </section>
 
-        <!-- =====================================================
-             05 / LIGHT CTA
-             ===================================================== -->
-        <section class="home-quote home-quote--light section section--light" id="quote" aria-labelledby="homeQuoteTitle">
-            <div class="body-target home-quote__target" aria-hidden="true"></div>
-            <span class="technical-line home-quote__line" aria-hidden="true"></span>
-            <span class="target-dot target-dot--yellow home-quote__dot" aria-hidden="true"></span>
-        
-            <div class="container-wide">
-                <div class="home-quote-light">
-                    <div class="home-quote-light__heading">
-                        <span class="section-kicker">Get Started</span>
-        
-                        <h2 id="homeQuoteTitle" class="upper-title">
-                            Compare provider<br>
-                            options with <span class="text-accent">clarity.</span>
-                        </h2>
-                    </div>
-        
-                    <div class="home-quote-light__content">
-                        <p>
-                            Sentra helps homeowners and businesses compare independent security provider
-                            options for CCTV systems, alarm systems, access control, and monitoring-related requests.
-                        </p>
-        
-                        <div class="home-quote-light__actions">
+            <!-- =====================================================
+                 05 / PROVIDER COMPARISON FACTORS
+                 ===================================================== -->
+            <section class="provider-factors section section--medium" id="provider-factors" aria-labelledby="providerFactorsTitle">
+                <div class="body-target body-target--large provider-factors__target" aria-hidden="true"></div>
+                <span class="technical-line provider-factors__line" aria-hidden="true"></span>
+            
+                <div class="container-wide">
+                    <div class="provider-factors__layout">
+                        <div class="provider-factors__heading">
+                            <span class="section-kicker">Compare Smarter</span>
+            
+                            <h2 id="providerFactorsTitle" class="upper-title">
+                                What to check<br>
+                                before choosing a <span class="text-accent">provider.</span>
+                            </h2>
+            
+                            <p>
+                                Sentra helps organize your request, but users should compare provider details directly
+                                before making any security-related decision.
+                            </p>
+            
                             <a class="btn btn--primary" href="contact.html">Start Matching</a>
-                            <a class="btn btn--dark-outline" href="services.html">View Services</a>
+                        </div>
+            
+                        <div class="provider-factors__board" aria-label="Provider comparison factors">
+                            <article class="provider-factor">
+                                <span class="provider-factor__number">01</span>
+            
+                                <div>
+                                    <h3>Licensing & insurance</h3>
+                                    <p>Ask each provider about required credentials, insurance, and local requirements.</p>
+                                </div>
+                            </article>
+            
+                            <article class="provider-factor">
+                                <span class="provider-factor__number">02</span>
+            
+                                <div>
+                                    <h3>System scope</h3>
+                                    <p>Compare what is included: cameras, alarms, access control, monitoring, or support.</p>
+                                </div>
+                            </article>
+            
+                            <article class="provider-factor">
+                                <span class="provider-factor__number">03</span>
+            
+                                <div>
+                                    <h3>Quote details</h3>
+                                    <p>Review pricing, equipment, timelines, warranties, and service terms carefully.</p>
+                                </div>
+                            </article>
+            
+                            <article class="provider-factor">
+                                <span class="provider-factor__number">04</span>
+            
+                                <div>
+                                    <h3>Local availability</h3>
+                                    <p>Provider options may vary by ZIP code, project type, and requested security category.</p>
+                                </div>
+                            </article>
                         </div>
                     </div>
-        
-                    <div class="home-quote-light__status" aria-label="Important platform notes">
-                        <span>
-                            <strong>01</strong>
-                            Free matching request
-                        </span>
-        
-                        <span>
-                            <strong>02</strong>
-                            Independent providers
-                        </span>
-        
-                        <span>
-                            <strong>03</strong>
-                            Availability varies by area
-                        </span>
-        
-                        <span>
-                            <strong>04</strong>
-                            Users verify provider details
-                        </span>
-                    </div>
-        
-                    <p class="legal-note home-quote-light__legal" data-legal-notice>
-                        Sentra is an independent provider matching platform. Provider availability, pricing,
-                        licensing, insurance, timelines, and service details vary by provider and location.
-                    </p>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- =====================================================
+             05 / LIGHT CTA
+             ===================================================== -->
+            <section class="home-quote home-quote--light section section--light" id="quote"
+                aria-labelledby="homeQuoteTitle">
+                <div class="body-target home-quote__target" aria-hidden="true"></div>
+                <span class="technical-line home-quote__line" aria-hidden="true"></span>
+                <span class="target-dot target-dot--yellow home-quote__dot" aria-hidden="true"></span>
+
+                <div class="container-wide">
+                    <div class="home-quote-light">
+                        <div class="home-quote-light__heading">
+                            <span class="section-kicker">Get Started</span>
+
+                            <h2 id="homeQuoteTitle" class="upper-title">
+                                Compare provider<br>
+                                options with <span class="text-accent">clarity.</span>
+                            </h2>
+                        </div>
+
+                        <div class="home-quote-light__content">
+                            <p>
+                                Sentra helps homeowners and businesses compare independent security provider
+                                options for CCTV systems, alarm systems, access control, and monitoring-related
+                                requests.
+                            </p>
+
+                            <div class="home-quote-light__actions">
+                                <a class="btn btn--primary" href="contact.html">Start Matching</a>
+                                <a class="btn btn--dark-outline" href="services.html">View Services</a>
+                            </div>
+                        </div>
+
+                        <div class="home-quote-light__status" aria-label="Important platform notes">
+                            <span>
+                                <strong>01</strong>
+                                Free matching request
+                            </span>
+
+                            <span>
+                                <strong>02</strong>
+                                Independent providers
+                            </span>
+
+                            <span>
+                                <strong>03</strong>
+                                Availability varies by area
+                            </span>
+
+                            <span>
+                                <strong>04</strong>
+                                Users verify provider details
+                            </span>
+                        </div>
+
+                        <p class="legal-note home-quote-light__legal" data-legal-notice>
+                            Sentra is an independent provider matching platform. Provider availability, pricing,
+                            licensing, insurance, timelines, and service details vary by provider and location.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <div data-site-footer></div>
