@@ -1185,3 +1185,211 @@
     line-height: 1.12;
     letter-spacing: -0.03em;
 }
+
+/* ==========================================================
+   PROVIDER FIT LINE CARD HOVERS
+   ========================================================== */
+
+.provider-fit-line>* {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.provider-fit-line>*::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: 2px;
+    content: "";
+    background: linear-gradient(90deg,
+            var(--color-accent),
+            rgba(245, 197, 66, 0.15));
+    transition: width var(--transition-slow);
+}
+
+.provider-fit-line>*::after {
+    position: absolute;
+    inset: auto -30% -55% auto;
+    z-index: -1;
+    width: 160px;
+    aspect-ratio: 1;
+    pointer-events: none;
+    content: "";
+    background: radial-gradient(circle, rgba(245, 197, 66, 0.16), transparent 66%);
+    opacity: 0;
+    transform: scale(0.7);
+    transition:
+        opacity var(--transition-base),
+        transform var(--transition-slow);
+}
+
+.provider-fit-line>*:hover,
+.provider-fit-line>*:focus-within {
+    background: rgba(245, 197, 66, 0.055);
+    border-color: rgba(245, 197, 66, 0.38);
+    box-shadow:
+        0 18px 44px rgba(0, 0, 0, 0.16),
+        inset 0 0 22px rgba(245, 197, 66, 0.045);
+    transform: translateY(-4px);
+}
+
+.provider-fit-line>*:hover::before,
+.provider-fit-line>*:focus-within::before {
+    width: 100%;
+}
+
+.provider-fit-line>*:hover::after,
+.provider-fit-line>*:focus-within::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================================
+   PROVIDER FIT LINE — COMPACT TABLET / MOBILE
+   ========================================================== */
+
+@media (max-width: 1180px) {
+    .provider-fit-line {
+        gap: 12px;
+    }
+
+    .provider-fit-line__item {
+        position: relative;
+        min-height: 138px;
+        padding: 18px 62px 18px 18px;
+        overflow: hidden;
+    }
+
+    .provider-fit-line__number {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        margin: 0;
+        color: var(--color-accent);
+        background: rgba(245, 197, 66, 0.09);
+        border: 1px solid rgba(245, 197, 66, 0.32);
+        border-radius: 12px 4px 12px 4px;
+        font-size: 0.72rem;
+        font-weight: 850;
+        line-height: 1;
+        letter-spacing: 0.08em;
+    }
+
+    .provider-fit-line__item strong {
+        display: block;
+        margin-bottom: 8px;
+        padding-right: 8px;
+        font-size: 1rem;
+        line-height: 1.15;
+    }
+
+    .provider-fit-line__item p {
+        margin: 0;
+        font-size: 0.84rem;
+        line-height: 1.42;
+    }
+
+    .provider-fit-line__connector {
+        min-width: 28px;
+        opacity: 0.55;
+    }
+}
+
+@media (max-width: 760px) {
+    .provider-fit-line {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .provider-fit-line__connector {
+        display: none;
+    }
+
+    .provider-fit-line__item {
+        min-height: 118px;
+        padding: 16px 56px 16px 16px;
+    }
+
+    .provider-fit-line__number {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 0.68rem;
+    }
+
+    .provider-fit-line__item strong {
+        font-size: 0.98rem;
+    }
+
+    .provider-fit-line__item p {
+        font-size: 0.8rem;
+        line-height: 1.38;
+    }
+}
+
+/* ==========================================================
+   PROVIDER FIT LINE — CARD HOVERS
+   ========================================================== */
+
+.provider-fit-line__item {
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.provider-fit-line__item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    content: "";
+    background: linear-gradient(90deg, var(--color-accent), transparent);
+    transition: width var(--transition-slow);
+}
+
+.provider-fit-line__item:hover {
+    background: rgba(245, 197, 66, 0.055);
+    border-color: rgba(245, 197, 66, 0.38);
+    box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.16),
+        inset 0 0 22px rgba(245, 197, 66, 0.045);
+    transform: translateY(-4px);
+}
+
+.provider-fit-line__item:hover::before {
+    width: 100%;
+}
+
+.provider-fit-line__item:hover .provider-fit-line__number {
+    color: #191a1b;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.provider-fit-line__number {
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+}

@@ -2190,3 +2190,31 @@ h4 {
 .service-index__grid .service-card:hover .text-link::after {
     transform: translateX(4px);
 }
+
+/* ==========================================================
+   MOBILE / TABLET HEADER BUTTON POSITION FIX
+   ========================================================== */
+
+@media (max-width: 1180px) {
+    .site-header__inner {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+
+    .header-actions {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        min-width: max-content;
+    }
+
+    .mobile-phone-quick {
+        order: 1;
+    }
+
+    .mobile-menu-toggle {
+        order: 2;
+        margin-left: 0;
+    }
+}

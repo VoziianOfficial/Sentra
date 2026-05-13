@@ -1416,3 +1416,62 @@
         font-size: 2.6rem;
     }
 }
+
+/* ==========================================================
+   HOME QUOTE STATUS — TABLET / MOBILE COMPACT
+   ========================================================== */
+
+@media (max-width: 1180px) {
+    .home-quote-light__status {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .home-quote-light__status span {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 58px;
+        padding: 12px 14px;
+        text-align: left;
+    }
+
+    .home-quote-light__status span strong {
+        position: static !important;
+        display: grid;
+        place-items: center;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        margin: 0;
+        color: #191a1b;
+        font-size: 0.68rem;
+        line-height: 1;
+        background: var(--color-accent);
+        border: 1px solid var(--color-accent);
+        border-radius: 11px 4px 11px 4px;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-quote-light__status {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .home-quote-light__status span {
+        min-height: 52px;
+        padding: 10px 12px;
+        gap: 10px;
+        font-size: 0.82rem;
+        line-height: 1.25;
+    }
+
+    .home-quote-light__status span strong {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.64rem;
+    }
+}
