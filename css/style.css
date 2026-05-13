@@ -2173,3 +2173,20 @@ h4 {
 .service-area-map__layout>* {
     min-width: 0;
 }
+
+.home-services__grid .service-card,
+.service-index__grid .service-card {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.home-services__grid .service-card:focus-visible,
+.service-index__grid .service-card:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 5px;
+}
+
+.home-services__grid .service-card:hover .text-link::after,
+.service-index__grid .service-card:hover .text-link::after {
+    transform: translateX(4px);
+}

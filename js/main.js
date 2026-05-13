@@ -641,7 +641,9 @@
 
   function renderServiceCard(service, variant) {
     return `
-      <article class="photo-card service-card service-card--${escapeAttr(variant)}">
+      <a class="photo-card service-card service-card--${escapeAttr(variant)}"
+         href="${escapeAttr(service.href)}"
+         aria-label="Learn more about ${escapeAttr(service.title)}">
         <img class="photo-card__image"
              src="${escapeAttr(service.image)}"
              alt="${escapeAttr(service.title)}">
@@ -654,11 +656,11 @@
           <span class="photo-card__status">${escapeHtml(service.status || "Provider Options")}</span>
           <h3>${escapeHtml(service.title)}</h3>
           <p>${escapeHtml(service.cardText || service.summary)}</p>
-          <a class="text-link" href="${escapeAttr(service.href)}">Learn more</a>
+          <span class="text-link" aria-hidden="true">Learn more</span>
         </div>
 
         <span class="photo-card__scan" aria-hidden="true"></span>
-      </article>
+      </a>
     `;
   }
 
